@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign ID</title>
+    <title>Sovereign ID - Ідентифікація</title>
     <style>
-        body { background-color: #0f172a; color: white; text-align: center; font-family: sans-serif; padding-top: 50px; }
-        appkit-button { display: block; margin: 20px auto; min-height: 50px; }
+        body { 
+            background-color: #0f172a; 
+            color: #f8fafc; 
+            text-align: center; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        h1 { font-size: 24px; margin-bottom: 10px; }
+        p { color: #94a3b8; margin-bottom: 30px; }
+        appkit-button { 
+            display: inline-block; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body>
+
     <h1>Юридична Вимога Бажання</h1>
-    <p>Підключіть гаманець для ідентифікації Суверена</p>
+    <p>Підключіть гаманець для ідентифікації статусу Суверена</p>
 
     <appkit-button></appkit-button>
 
@@ -21,11 +35,22 @@
         import { solana } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-networks-cdn@1.1.0/dist/appkit-networks.js'
         
         const solanaAdapter = new SolanaAdapter({})
+
         createAppKit({
             adapters: [solanaAdapter],
             networks: [solana],
-            projectId: '81e17a419c83664d471542f2b4891b61',
-            metadata: { name: 'Sovereign ID', url: window.location.origin }
+            projectId: '81e17ad7bb884662d84bdb376cc03e37',
+            metadata: { 
+                name: 'Sovereign ID', 
+                description: 'Система ідентифікації суверена',
+                url: window.location.origin,
+                icons: ['https://avatars.githubusercontent.com/u/17922993']
+            },
+            features: {
+                analytics: false,
+                email: false,
+                socials: false
+            }
         })
     </script>
 </body>
