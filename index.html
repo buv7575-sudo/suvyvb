@@ -6,7 +6,7 @@
     <title>Sovereign ID</title>
     <style>
         body { background-color: #0f172a; color: white; text-align: center; font-family: sans-serif; padding-top: 50px; }
-        appkit-button { display: inline-block; margin-top: 20px; }
+        appkit-button { display: block; margin: 20px auto; min-height: 50px; }
     </style>
 </head>
 <body>
@@ -21,16 +21,11 @@
         import { solana } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-networks-cdn@1.1.0/dist/appkit-networks.js'
         
         const solanaAdapter = new SolanaAdapter({})
-
         createAppKit({
             adapters: [solanaAdapter],
             networks: [solana],
             projectId: '81e17a419c83664d471542f2b4891b61',
-            metadata: { 
-                name: 'Sovereign ID', 
-                url: window.location.origin,
-                icons: ['https://avatars.githubusercontent.com/u/17922993']
-            }
+            metadata: { name: 'Sovereign ID', url: window.location.origin }
         })
     </script>
 </body>
