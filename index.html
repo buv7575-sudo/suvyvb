@@ -1,33 +1,20 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign ID - Ідентифікація</title>
+    <title>Sovereign ID</title>
     <style>
-        body { 
-            background-color: #0f172a; 
-            color: #f8fafc; 
-            text-align: center; 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            padding: 40px 20px;
-            margin: 0;
-        }
-        h1 { font-size: 24px; margin-bottom: 10px; }
-        p { color: #94a3b8; margin-bottom: 30px; }
-        appkit-button { 
-            display: inline-block; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            border-radius: 12px;
-        }
+        body { background-color: #1e293b; color: white; text-align: center; font-family: sans-serif; padding-top: 50px; }
+        /* Це змусить кнопку бути видимою, навіть якщо вона довго вантажиться */
+        appkit-button { display: block; margin: 20px auto; min-width: 160px; min-height: 48px; background: #3b82f6; border-radius: 10px; }
     </style>
 </head>
 <body>
-
     <h1>Юридична Вимога Бажання</h1>
-    <p>Підключіть гаманець для ідентифікації статусу Суверена</p>
+    <p>Підключіть гаманець для ідентифікації Суверена</p>
 
-    <appkit-button></appkit-button>
+    <appkit-button id="connect-btn">Connect Wallet</appkit-button>
 
     <script type="module">
         import { createAppKit } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-cdn@1.1.0/dist/appkit.js'
@@ -41,15 +28,8 @@
             networks: [solana],
             projectId: '81e17ad7bb884662d84bdb376cc03e37',
             metadata: { 
-                name: 'Sovereign ID', 
-                description: 'Система ідентифікації суверена',
-                url: window.location.origin,
-                icons: ['https://avatars.githubusercontent.com/u/17922993']
-            },
-            features: {
-                analytics: false,
-                email: false,
-                socials: false
+                name: 'Sovereign', 
+                url: window.location.origin 
             }
         })
     </script>
