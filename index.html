@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sovereign ID</title>
     <style>
         body { background-color: #1e293b; color: white; text-align: center; font-family: sans-serif; padding-top: 50px; }
-        /* Це змусить кнопку бути видимою, навіть якщо вона довго вантажиться */
-        appkit-button { display: block; margin: 20px auto; min-width: 160px; min-height: 48px; background: #3b82f6; border-radius: 10px; }
+        /* Прибираємо жорсткі рамки, щоб не було меню "Копіювати" */
+        appkit-button { display: block; margin: 20px auto; }
     </style>
 </head>
 <body>
     <h1>Юридична Вимога Бажання</h1>
     <p>Підключіть гаманець для ідентифікації Суверена</p>
 
-    <appkit-button id="connect-btn">Connect Wallet</appkit-button>
+    <appkit-button></appkit-button>
 
     <script type="module">
         import { createAppKit } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-cdn@1.1.0/dist/appkit.js'
@@ -30,7 +30,8 @@
             metadata: { 
                 name: 'Sovereign', 
                 url: window.location.origin 
-            }
+            },
+            features: { analytics: false }
         })
     </script>
 </body>
