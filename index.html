@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юридична Вимога Бажання</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: #0d1117; color: white; text-align: center; }
+        h1 { margin-bottom: 10px; }
+        p { color: #8b949e; margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Юридична Вимога Бажання</h1>
+    <p>Підключіть гаманець для ідентифікації Суверена</p>
+    
+    <appkit-button></appkit-button>
+
+    <script type="module">
+        import { createAppKit } from 'https://unpkg.com/@reown/appkit'
+        import { solana, mainnet } from 'https://unpkg.com/@reown/appkit/networks'
+        
+        createAppKit({
+            networks: [solana, mainnet],
+            projectId: '81e17ad7bb884662d84bdb376cc03e37',
+            metadata: {
+                name: 'Юридична Вимога Бажання',
+                description: 'Система ідентифікації Суверена',
+                url: window.location.origin,
+                icons: ['https://avatars.githubusercontent.com/u/179229932']
+            }
+        })
+    </script>
+</body>
+</html>
