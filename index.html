@@ -6,27 +6,31 @@
     <title>Sovereign ID</title>
     <style>
         body { background-color: #1e293b; color: white; text-align: center; font-family: sans-serif; padding-top: 50px; }
-        appkit-button { display: block; margin: 20px auto; min-width: 150px; min-height: 50px; }
+        /* Це змусить кнопку бути видимою, навіть якщо вона довго вантажиться */
+        appkit-button { display: block; margin: 20px auto; min-width: 160px; min-height: 48px; background: #3b82f6; border-radius: 10px; }
     </style>
 </head>
 <body>
     <h1>Юридична Вимога Бажання</h1>
     <p>Підключіть гаманець для ідентифікації Суверена</p>
 
-    <appkit-button></appkit-button>
+    <appkit-button id="connect-btn">Connect Wallet</appkit-button>
 
     <script type="module">
         import { createAppKit } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-cdn@1.1.0/dist/appkit.js'
         import { SolanaAdapter } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-adapter-solana-cdn@1.1.0/dist/appkit-adapter-solana.js'
         import { solana } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-networks-cdn@1.1.0/dist/appkit-networks.js'
-        import { PhantomWalletAdapter } from 'https://cdn.jsdelivr.net/npm/@solana/wallet-adapter-wallets@0.19.32/lib/index.js'
+        
+        const solanaAdapter = new SolanaAdapter({})
 
-        const solanaAdapter = new SolanaAdapter({ wallets: [new PhantomWalletAdapter()] })
         createAppKit({
             adapters: [solanaAdapter],
             networks: [solana],
             projectId: '81e17a419c83664d471542f2b4891b61',
-            metadata: { name: 'Sovereign', url: window.location.origin }
+            metadata: { 
+                name: 'Sovereign', 
+                url: window.location.origin 
+            }
         })
     </script>
 </body>
