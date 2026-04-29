@@ -2,16 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Юридична Вимога Бажання</title>
+    <title>Sovereign ID</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding-top: 50px; background-color: #0f172a; color: white; }
-        h1 { margin-bottom: 20px; }
-        p { color: #94a3b8; margin-bottom: 30px; }
+        body { background-color: #1e293b; color: white; text-align: center; font-family: sans-serif; padding-top: 50px; }
     </style>
 </head>
 <body>
-
     <h1>Юридична Вимога Бажання</h1>
     <p>Підключіть гаманець для ідентифікації Суверена</p>
 
@@ -20,23 +16,15 @@
     <script type="module">
         import { createAppKit } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-cdn@1.1.0/dist/appkit.js'
         import { SolanaAdapter } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-adapter-solana-cdn@1.1.0/dist/appkit-adapter-solana.js'
-        import { solana, solanaTestnet, solanaDevnet } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-networks-cdn@1.1.0/dist/appkit-networks.js'
-        import { SolflareWalletAdapter, PhantomWalletAdapter } from 'https://cdn.jsdelivr.net/npm/@solana/wallet-adapter-wallets@0.19.32/lib/index.js'
+        import { solana } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-networks-cdn@1.1.0/dist/appkit-networks.js'
+        import { PhantomWalletAdapter } from 'https://cdn.jsdelivr.net/npm/@solana/wallet-adapter-wallets@0.19.32/lib/index.js'
 
-        const solanaAdapter = new SolanaAdapter({
-          wallets: [new PhantomWalletAdapter(), new SolflareWalletAdapter()]
-        })
-
+        const solanaAdapter = new SolanaAdapter({ wallets: [new PhantomWalletAdapter()] })
         createAppKit({
-          adapters: [solanaAdapter],
-          networks: [solana, solanaTestnet, solanaDevnet],
-          projectId: '81e17a419c83664d471542f2b4891b61',
-          metadata: {
-            name: 'Юридична Вимога Бажання',
-            description: 'Система ідентифікації',
-            url: window.location.origin,
-            icons: ['https://avatars.githubusercontent.com/u/17922993']
-          }
+            adapters: [solanaAdapter],
+            networks: [solana],
+            projectId: '81e17a419c83664d471542f2b4891b61',
+            metadata: { name: 'Sovereign', url: window.location.origin }
         })
     </script>
 </body>
