@@ -3,46 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign ID</title>
-    <style>
-        body { 
-            background-color: #1e293b; 
-            color: white; 
-            text-align: center; 
-            font-family: sans-serif; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-        h1 { font-size: 24px; margin-bottom: 10px; }
-        p { color: #94a3b8; margin-bottom: 30px; padding: 0 20px; }
-    </style>
+    <title>Sovereign App</title>
 </head>
 <body>
-    <h1>Юридична Вимога Бажання</h1>
-    <p>Підключіть гаманець для ідентифікації Суверена</p>
 
-    <appkit-button></appkit-button>
+    <div style="display: flex; justify-content: center; margin-top: 50px;">
+        <appkit-button></appkit-button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
 
     <script type="module">
-        import { createAppKit } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-cdn@1.1.0/dist/appkit.js'
-        import { SolanaAdapter } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-adapter-solana-cdn@1.1.0/dist/appkit-adapter-solana.js'
-        import { solana } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-networks-cdn@1.1.0/dist/appkit-networks.js'
-        
-        const solanaAdapter = new SolanaAdapter({})
+        import { createAppKit } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-cdn@1.2.1/dist/appkit.js'
+        import { SolanaAdapter } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-adapter-solana-cdn@1.2.1/dist/appkit-adapter-solana.js'
+        import { solana, solanaTestnet, solanaDevnet } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-networks-cdn@1.2.1/dist/appkit-networks.js'
 
+        // Ініціалізація адаптера
+        const solanaAdapter = new SolanaAdapter();
+
+        // Створення AppKit
         createAppKit({
             adapters: [solanaAdapter],
-            networks: [solana],
+            networks: [solana, solanaTestnet, solanaDevnet],
             projectId: '81e17ad7bb884662d84bdb376cc03e37',
             metadata: { 
                 name: 'Sovereign', 
-                url: window.location.origin
+                description: 'Connect to Sovereign',
+                url: 'https://buv7575-sudo.github.io', // Ваш основний домен
+                icons: ['https://avatars.githubusercontent.com/u/179229932']
+            },
+            features: { 
+                analytics: false, 
+                email: false, 
+                socials: false 
             }
-        })
+        });
     </script>
 </body>
 </html>
