@@ -1,27 +1,22 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Sovereign</title>
 </head>
-<body>
-
-<appkit-button></appkit-button>
-
+<body style="background:#111;color:#fff;text-align:center;">
+    <h1>Sovereign</h1>
+    <appkit-button></appkit-button>
     <script type="module">
         import { createAppKit } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-cdn@1.2.1/dist/appkit.js'
         import { SolanaAdapter } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-adapter-solana-cdn@1.2.1/dist/appkit-adapter-solana.js'
         import { solana } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-networks-cdn@1.2.1/dist/appkit-networks.js'
-
-        const solanaAdapter = new SolanaAdapter()
+        const a = new SolanaAdapter()
         createAppKit({
-            adapters: [solanaAdapter],
+            adapters: [a],
             networks: [solana],
             projectId: '81e17ad7bb884662d84bdb376cc03e37',
-            metadata: { 
-                name: 'Sovereign', 
-                url: 'https://buv7575-sudo.github.io' 
-            }
+            metadata: { name: 'Sovereign', url: 'https://buv7575-sudo.github.io' }
         })
     </script>
 </body>
