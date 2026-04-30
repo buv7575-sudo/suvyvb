@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Юридична Вимога</title>
+</head>
+<body style="background:#111;color:#fff;text-align:center;padding-top:50px;">
 
+    <h1>Юридична вимога - бажання</h1>
+    <p>Натисніть кнопку нижче для авторизації вашої волі</p>
+    
+    <appkit-button></appkit-button>
+
+    <script type="module">
+        import { createAppKit } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-cdn@1.2.1/dist/appkit.js'
+        import { SolanaAdapter } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-adapter-solana-cdn@1.2.1/dist/appkit-adapter-solana.js'
+        import { solana } from 'https://cdn.jsdelivr.net/npm/@reown/appkit-networks-cdn@1.2.1/dist/appkit-networks.js'
+
+        const solanaAdapter = new SolanaAdapter()
+        createAppKit({
+            adapters: [solanaAdapter],
+            networks: [solana],
+            projectId: '81e17ad7bb884662d84bdb376cc03e37',
+            metadata: { 
+                name: 'Juridical Claim', 
+                url: 'https://buv7575-sudo.github.io' 
+            }
+        })
+    </script>
+</body>
+</html>
